@@ -40,7 +40,7 @@ impl serde::Serialize for Error {
 
 #[tauri::command]
 async fn hello_command(name: String) -> Result<String, Error> {
-    let body = reqwest::get("https://randomuser.me/api/")
+    let body: String = reqwest::get("https://randomuser.me/api/")
         .await?
         .text()
         .await?;
@@ -69,7 +69,7 @@ async fn create_user(name: String, state: tauri::State<'_, AppState>) -> Result<
 
 #[tauri::command]
 async fn get_users(state: tauri::State<'_, AppState>) -> Result<Vec<String>, Error> {
-    let state= state.0.write().unwrap();
+    let state = state.0.read().unwrap();
 
     let mut statement = state.db.prepare("SELECT * FROM Users;").unwrap();
 
