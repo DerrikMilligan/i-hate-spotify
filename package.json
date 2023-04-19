@@ -40,6 +40,7 @@
   "type": "module",
   "dependencies": {
     "@tauri-apps/api": "2.0.0-alpha.2",
-    "internal-ip": "^7.0.0"
+    "internal-ip": "^7.0.0",
+    "tauri-plugin-sqlite-api": "github:lzdyes/tauri-plugin-sqlite#v0.1.1"
   }
 }

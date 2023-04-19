@@ -21,6 +21,7 @@ tauri-build = { version = "2.0.0-alpha.2", features = [] }
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 tauri = { version = "2.0.0-alpha.4", features = [] }
+sqlite = "0.30.4"
 reqwest = { version = "0.11.14" }
 thiserror = "1.0.39"
 
